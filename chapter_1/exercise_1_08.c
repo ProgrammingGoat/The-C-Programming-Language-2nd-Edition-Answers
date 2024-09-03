@@ -1,15 +1,15 @@
 #include <stdio.h>
 
-/* Write a program to copy its input to its output, replacing each string of one or more blanks by a single blank. */
+/* Write a program to count blanks, tabs and newlines. */
 
 int main() {
-    int c, prevchar;
-    prevchar = 'a';
+    int c, nl;
 
     while ((c = getchar()) != EOF) {
-        if (!(c == ' ' && prevchar == ' ')) {
-            putchar(c);
+        if (c == '\n' || c == '\t' || c == ' ') {
+            ++nl;
         }
-        prevchar = c;
     }
+
+    printf("No. of blanks, tabs and newlines: %d", nl);
 }
